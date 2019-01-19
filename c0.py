@@ -18,3 +18,14 @@ def fun():
 fun()
 # print(aa)
 # @fun
+
+import os
+
+file_path = '/Users/zhuzhiqun/PycharmProjects/rbitscostfile/utilforbox1.py'
+folder_path = '/Users/zhuzhiqun/PycharmProjects/rbitscostfile1'
+
+
+if os.access(folder_path, os.R_OK):
+    print('ok')
+else:
+    print('not exist')
