@@ -73,16 +73,23 @@ class Base:
         print('*** end   run {} ***'.format(self.target))
 
 
+class FactoryBase:
+    def __init__(self):
+        pass
+
+
 if __name__ == '__main__':
     cp = os.getcwd()
     test_file_path = os.path.join(cp, 'c0.py')
     test_folder_path = os.path.join(cp, 'templates')
 
     def func01(*args, **kwargs):
-        pass
+        print(*args, **kwargs)
+
 
     def func02(*args, **kwargs):
-        pass
+        print(*args, **kwargs)
+
 
     test_obj = Base(test_file_path, func01, func02)
     test_obj.run()
