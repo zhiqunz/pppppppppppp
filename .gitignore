@@ -48,6 +48,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+/test/
 htmlcov/
 .tox/
 .coverage
@@ -64,5 +65,6 @@ target/
 
 # Mac files
 *.DS_Store
+/templates/
 
 vcap-local.json
