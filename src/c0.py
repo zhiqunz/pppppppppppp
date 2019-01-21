@@ -1,3 +1,5 @@
+from src.c1 import *
+
 a = 'aa'
 
 b = 1
@@ -5,6 +7,7 @@ b = 1
 c = False
 
 d = [1,2]
+add(d[0], d[1])
 
 f = { "age":1,
       "name":"zhuzhiqun"

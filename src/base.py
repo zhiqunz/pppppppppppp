@@ -75,7 +75,7 @@ class Base:
 
 class FactoryBase:
     def __init__(self):
-        pass
+        print('FactoryBase')
 
 
 if __name__ == '__main__':

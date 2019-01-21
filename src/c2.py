@@ -1,4 +1,4 @@
-from c1 import add,jianfa  # 执行C1文件
+from src.c1 import add,jianfa  # 执行C1文件
 
 print("+++++++++++++++++")
 print(__name__)
