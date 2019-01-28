@@ -23,22 +23,14 @@ class MyTestCheckTarget(unittest.TestCase):
 class MyTestGetFolder(unittest.TestCase):
     def test_get(self):
         tmp_path = os.path.join(os.getcwd(), 'tmp')
-        result = {'files_name_list': ['empty.py', ],
-                  'files_path_list': [os.path.join(tmp_path, 'empty.py'), ]
-                  }
+        result = [os.path.join(tmp_path, 'empty.py'), ]
         self.assertEqual(get_folder_only_files(tmp_path), result)
 
     def test_get_all(self):
         tmp_path = os.path.join(os.getcwd(), 'tmp')
-        result = {'files_name_list': ['empty.py',
-                                      'empty01.py'
-                                      ],
-                  'files_path_list': [os.path.join(tmp_path, 'empty.py'),
-                                      os.path.join(tmp_path,
-                                                   'tmp01',
-                                                   'empty01.py'),
-                                      ]
-                  }
+        result = [os.path.join(tmp_path, 'empty.py'),
+                  os.path.join(tmp_path, 'tmp01', 'empty01.py'),
+                  ]
         self.assertEqual(get_folder_only_files(tmp_path, True), result)
 
 
