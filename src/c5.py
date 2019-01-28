@@ -1,6 +1,6 @@
 from flask import Flask, render_template,request,redirect,session  # 导入这个包
 
-app = Flask(__name__)  # 创建实例
+app = Flask(__Name__)  # 创建实例
 app.secret_key="zhuzhiqun"
 app.debug = True
 

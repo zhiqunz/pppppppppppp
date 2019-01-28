@@ -1,6 +1,6 @@
 from flask import Flask,jsonify # 导入这个包
 
-app = Flask(__name__)  # 创建实例
+app = Flask(__Name__)  # 创建实例
 
 a = 'zhu'
 b = 1

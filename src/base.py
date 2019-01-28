@@ -1,11 +1,12 @@
 import os
+from types import MethodType
 
 
 class Base:
     def __init__(self, target, fun_get, fun_process, all_flg=False):
         print('*** new obj: {}, all flg: {} ***'.format(target, all_flg))
         self.lines_list = []
-        self.files_name_list = []
+        self.files_Name_list = []
         self.files_path_list = []
 
         # 参数检查
@@ -39,13 +40,13 @@ class Base:
                 dir_result = os.walk(target)
                 for entry in dir_result:
                     for name in entry[2]:
-                        self.files_name_list.append(name)
+                        self.files_Name_list.append(name)
                         self.files_path_list.append(os.path.join(entry[0],
                                                                  name))
             else:
                 dir_result = os.scandir(target)
                 for entry in dir_result:
-                    self.files_name_list.append(entry.name)
+                    self.files_Name_list.append(entry.name)
                     self.files_path_list.append(entry.path)
         elif os.path.isfile(target):
             with open(target, 'r', encoding="utf-8") as f:
@@ -74,12 +75,28 @@ class Base:
 
 
 class FactoryBase:
+    @classmethod
+    def get_new_class(cls, fun1):
+        class Dog:
+            def __init__(self):
+                self.name = 'dog'
+
+            def say(self):
+                print(self.name)
+
+        def dummy(self, *args, **kwargs):
+            return fun1(*args, **kwargs)
+
+        Dog.run = MethodType(dummy, Dog)
+        return Dog
+
     def __init__(self):
         print('FactoryBase')
 
 
 if __name__ == '__main__':
     cp = os.getcwd()
+    print(cp)
     test_file_path = os.path.join(cp, 'c0.py')
     test_folder_path = os.path.join(cp, 'templates')
 

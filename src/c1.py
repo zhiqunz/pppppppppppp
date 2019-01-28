@@ -7,7 +7,7 @@ def jianfa(a,b):
 f = [1,2]
 print(f)
 
-# print("c1's name:-->   ",__name__)
+# print("c1's name:-->   ",__Name__)
 if __name__ == '__main__':
     b = 0
 
