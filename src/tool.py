@@ -1,8 +1,8 @@
 import os
 
 
-# 获取文件夹内所有对应的文件名（带路径名，或者 单纯文件名）
-# 获取文件夹内及子文件夹内的所有的文件名（带路径名，或者 单纯文件名）
+# all_flg=False 获取文件夹内所有对应的文件名（带路径名，或者 单纯文件名）
+# all_flg=True  获取文件夹内及子文件夹内的所有的文件名（带路径名，或者 单纯文件名）
 def get_folder_only_files(folder_path='', all_flg=False):
     files_name_list = []
     files_path_list = []
