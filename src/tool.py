@@ -7,7 +7,7 @@ def get_folder_only_files(folder_path='', all_flg=False):
     # files_name_list = []
     files_path_list = []
 
-    check_taget(folder_path)
+    check_target(folder_path)
     if all_flg:
         dir_result = os.walk(folder_path)
         for entry in dir_result:
@@ -26,7 +26,7 @@ def get_folder_only_files(folder_path='', all_flg=False):
 
 # 检查文件或者文件夹是否存在，是否有权限
 # 不存在或者没有权限，抛出异常
-def check_taget(target):
+def check_target(target):
     if os.access(target, os.F_OK):
         if not os.access(target, os.R_OK):
             print('access is NOT allowed: {}'.format(target))
