@@ -1,0 +1,19 @@
+1.查看那些表被锁住了：
+    select * from SYSIBMADM.LOCKS_HELD WHERE TABNAME = 'JOB_T'
+2.docker镜像里，强制断开所有app：
+    docker exec -it amldb su - db2inst1 -c "db2 force application all"
+3.锁行：
+    select * from ${TABLENAME} where STATUS = ? FOR UPDATE WITH RR
+4.更新并返回更新结果：
+    select * from FINAL TABLE(update ${TABLENAME} set STATUS = ? where SERISE = ? and CORE_NO = ?)
+5.删除表：
+    DROP TABLE job_t
+6.删除数据：
+    DELETE FROM ORDER_T WHERE seq_no = 182
+7.两个表关联查询：
+    SELECT * FROM ${TABLENAME} WHERE SPLIT_FILENAME IN (SELECT FILENAME FROM STACK_T WHERE STATUS = ? ) FOR UPDATE WITH RR
+8.
+
+9.
+
+10.
