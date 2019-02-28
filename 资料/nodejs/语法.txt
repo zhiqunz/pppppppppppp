@@ -1,0 +1,6 @@
+1.setTimeout超时计时器 和 setInterval间隔计时器
+    setTimeout超时计时器--->1次性执行。
+    setInterval间隔计时器-->周期性执行，通过clearInterval()关闭。
+    setTimeout([code/function], milliseconds)
+    const id_of_setinterval = setInterval([code/function], milliseconds);
+    clearInterval(id_of_setinterval)
